@@ -1,0 +1,260 @@
+/* === Athena About Page Styling === */
+
+:root {
+  --primary-color: #14213D;
+  --accent-color: #0057FF;
+  --highlight-color: #FF3D57;
+  --support-color: #00D1B2;
+  --light-bg: #F5F5F0;
+  --text-color: #14213D;
+  --subtle-text: #2f3e4d;
+  --white: #ffffff;
+  --feature-bg: #F3F1FF;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  background-color: transparent;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Hero */
+.hero {
+  padding: 100px 40px 60px;
+  background: linear-gradient(135deg, #E3F2FD, #FCE4EC);
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 20px;
+  color: var(--subtle-text);
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  margin-top: 24px;
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #0046cc;
+  transform: translateY(-2px);
+}
+
+/* Mission & Vision Cards */
+.features-summary {
+  background-color: #ffffff;
+  padding: 80px 40px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.summary-card {
+  background: #fff;
+  padding: 32px;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}
+
+.summary-card p {
+  font-size: 16px;
+  color: var(--subtle-text);
+  line-height: 1.6;
+}
+
+/* How We Help Section */
+.features-impact-alt {
+  background-color: var(--feature-bg);
+  padding: 100px 40px;
+}
+
+.features-impact-alt h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 48px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.impact-cards-alt {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impact-item {
+  background: white;
+  padding: 24px;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+}
+
+.impact-item:hover {
+  transform: translateY(-4px);
+}
+
+.impact-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.impact-content p {
+  font-size: 16px;
+  color: var(--subtle-text);
+  line-height: 1.6;
+}
+
+/* Final CTA */
+.final-cta {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.final-cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta .cta-button {
+  background-color: var(--accent-color);
+  padding: 14px 28px;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Athena | Sign Up</title>
+  <link rel="stylesheet" href="athena-master.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">ATHENA</div>
+    <ul class="nav-links">
+      <li><a href="home-page.html">Home</a></li>
+      <li><a href="log-in-page.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sign Up Section -->
+  <section class="login-section">
+    <div class="login-card">
+      <h2>Create an Athena Account</h2>
+      <form id="signup-form" class="login-form">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" placeholder="you@example.com" required />
+
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="Choose a secure password" required />
+
+        <button type="submit" class="cta-button">Sign Up</button>
+
+        <div class="login-links">
+          <a href="log-in-page.html">Already have an account? Login</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Athena. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Firebase + Sign-Up Logic -->
+  <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDN4SON0lfdkVRo8jC4VvdSG8omQGynR_M",
+      authDomain: "athena-44e07.firebaseapp.com",
+      projectId: "athena-44e07",
+      storageBucket: "athena-44e07.appspot.com",
+      messagingSenderId: "627656309932",
+      appId: "1:627656309932:web:c9d14b101e60856d46f309",
+      measurementId: "G-SKDERVX3GY"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+  </script>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          alert("✅ Account created successfully!");
+          window.location.href = "log-in-page.html";
+        })
+        .catch((error) => {
+          alert("❌ " + error.message);
+        });
+    });
+  </script>
+</body>
+</html>
